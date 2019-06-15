@@ -22,7 +22,7 @@ PROVISION_DIR:=$(ROOT_DIR)/provision
 FILE_README:=$(ROOT_DIR)/README.rst
 PATH_DOCKER_COMPOSE:=provision/docker-compose
 
-pip_install := pip install -r
+pipenv_install := pipenv install
 docker-compose:=docker-compose -f docker-compose.yml
 
 include provision/make/*.mk
@@ -53,10 +53,8 @@ endif
 	@echo
 
 setup: clean
-	$(pip_install) "${REQUIREMENTS_DIR}/setup.txt"
-	@if [ -e "${REQUIREMENTS_DIR}/private.txt" ]; then \
-			$(pip_install) "${REQUIREMENTS_DIR}/private.txt"; \
-	fi
+	@echo "=====> loading packages..."
+	$(pipenv_install) --dev
 	pre-commit install
 	cp -rf .hooks/prepare-commit-msg .git/hooks/
 	@if [ ! -e ".env" ]; then \
@@ -65,5 +63,4 @@ setup: clean
 
 environment: clean
 	@echo "=====> loading virtualenv ${PYENV_NAME}..."
-	@pyenv virtualenv ${PYTHON_VERSION} ${PYENV_NAME} >> /dev/null 2>&1; \
-	@pyenv activate ${PYENV_NAME} >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
+	pipenv shell --fancy

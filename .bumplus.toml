@@ -1,6 +1,6 @@
 version = '0.0.0'
 
-[[files."CHANGELOG.rst"]]
+[[files."docs/source/CHANGELOG.rst"]]
 search = """
 `Unreleased`_
 +++++++++++++

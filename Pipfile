@@ -28,5 +28,8 @@ bumpversion = "*"
 bumplus = "*"
 pre-commit = "*"
 
+[scripts]
+test = "pytest"
+
 [requires]
 python_version = "3.6.4"

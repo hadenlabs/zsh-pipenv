@@ -1,4 +1,4 @@
-version = '0.0.0'
+version = '0.1.0'
 
 [[files."docs/source/CHANGELOG.rst"]]
 search = """
@@ -15,7 +15,7 @@ replace = """
 ++++++++++++++++++++++
 """
 
-[[files."CHANGELOG.rst"]]
+[[files."docs/source/CHANGELOG.rst"]]
 search = """
 .. _`Unreleased`: https://github.com/luismayta/zsh-pipenv/compare/{{old_version}}...HEAD
 """

@@ -22,8 +22,11 @@ pytest-cov = "*"
 pytest = "*"
 tox = "*"
 ipython = "*"
+parso = "*"
+pyyaml = "*"
 
 [packages]
+pyyaml = "*"
 
 [requires]
 python_version = "3.6.4"

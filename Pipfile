@@ -4,10 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-bumplus = "*"
-bumpversion = "*"
 docker-compose = "*"
-pre-commit = "*"
 restview = "*"
 rst = "*"
 caniusepython3 = "*"
@@ -27,6 +24,9 @@ pyyaml = "*"
 
 [packages]
 pyyaml = "*"
+bumpversion = "*"
+bumplus = "*"
+pre-commit = "*"
 
 [requires]
 python_version = "3.6.4"

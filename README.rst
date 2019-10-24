@@ -1,12 +1,10 @@
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv?ref=badge_shield)
-
 zsh-pipenv
 ==========
 
 Build
 -----
 
-|Build Status| |GitHub issues| |GitHub license|
+|Fossa Status| |Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.1.0
 :Web: https://github.com/luismayta/zsh-pipenv
@@ -159,6 +157,8 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _`Website`: http://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
+.. |Fossa Status| image:: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv.svg?type=large
+   :target: https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv?ref=badge_large
 .. |Build Status| image:: https://travis-ci.org/luismayta/zsh-pipenv.svg
    :target: https://travis-ci.org/luismayta/zsh-pipenv
 .. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-pipenv.svg
@@ -180,9 +180,5 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 
 .. Dependences:
 
-.. _Python 3.6.4: https://www.python.org/downloads/release/python-364
+.. _Pyenv: https://github.com/pyenv/pyenv
 .. _Docker: https://www.docker.com/
-.. _Docker Compose: https://docs.docker.com/compose/
-
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv?ref=badge_large)

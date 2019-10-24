@@ -22,26 +22,11 @@ function pipenv::install {
 }
 
 function pipenv::load {
-    if (( $+commands[pyenv] )); then
+    if [[ -x "$(command which pyenv)" ]]; then
         export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
     fi
-}
-
-function pipenv::shell-activate {
-    if (( ! $+commands[pipenv] )); then
-        echo "Install http://docs.pipenv.org/en/latest/ to use this plugin." > /dev/stderr
-        return 1
-    fi
-
-    if [ -e "$(pwd)/Pipfile" ]; then
-        if [ ! "$PIPENV_ACTIVE" ] && [[ "${VIRTUAL_ENV}" != $(pipenv --venv) ]]; then
-            echo -n "Pipfile exists. Do you want spawn a shell with the virtualenv? (y)"
-            read answer
-            if [[ "$answer" == "y" ]]; then
-                cat Pipfile | grep python_version
-                pipenv shell --fancy
-            fi
-        fi
+    if [[ -x "$(command which pipenv)" ]]; then
+        eval "$(pipenv --completion)"
     fi
 }
 
@@ -52,7 +37,6 @@ function pipenv::dependences {
 
 pipenv::load
 
-if (( ! $+commands[pipenv] )); then
+if [[ ! -x "$(command which pipenv)" ]]; then
     pipenv::install
-    chpwd_functions+=(pipenv::shell-activate)
 fi

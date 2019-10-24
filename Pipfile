@@ -32,4 +32,4 @@ pre-commit = "*"
 test = "pytest"
 
 [requires]
-python_version = "3.6.4"
+python_version = "3.8.0"

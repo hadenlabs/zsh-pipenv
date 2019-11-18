@@ -1,10 +1,7 @@
 zsh-pipenv
 ==========
 
-Build
------
-
-|Fossa Status| |Build Status| |GitHub issues| |GitHub license|
+|Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.1.0
 :Web: https://github.com/luismayta/zsh-pipenv
@@ -157,8 +154,6 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _`Website`: http://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
-.. |Fossa Status| image:: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv.svg?type=large
-   :target: https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pipenv?ref=badge_large
 .. |Build Status| image:: https://travis-ci.org/luismayta/zsh-pipenv.svg
    :target: https://travis-ci.org/luismayta/zsh-pipenv
 .. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-pipenv.svg
@@ -173,8 +168,8 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. Footer:
 .. |linkedin| image:: http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png
    :target: http://pe.linkedin.com/in/luismayta
-.. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/hadenlabs/zsh-pipenv/readme
-   :target: https://github.com/hadenlabs/zsh-pipenv
+.. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/luismayta/zsh-pipenv/readme
+   :target: https://github.com/luismayta/zsh-pipenv
 .. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
    :target: http://www.zsh.org
 

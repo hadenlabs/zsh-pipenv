@@ -8,35 +8,36 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-LIGHT_GREEN='\033[1;32m'
-CLEAR='\033[0m'
+PACKAGE_NAME=pipenv
+
+plugin_dir=$(dirname "${0}":A)
+
+# shellcheck source=/dev/null
+source "${plugin_dir}"/src/helpers/messages.zsh
 
 function pipenv::install {
-    if [[ $(uname) == 'Darwin' ]]; then
-        # shellcheck source=/dev/null
-        brew install pipenv
-    else
-        # shellcheck source=/dev/null
-        sudo apt install pipenv
+    message_info "Installing ${PACKAGE_NAME}"
+    if [ -x "$(command which pip3)" ]; then
+        pip3 install --user ${PACKAGE_NAME}
     fi
+    message_success "Installed ${PACKAGE_NAME}"
 }
 
 function pipenv::load {
-    if [[ -x "$(command which pyenv)" ]]; then
+    if [ -x "$(command which pyenv)" ]; then
         export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
     fi
-    if [[ -x "$(command which pipenv)" ]]; then
+    if [ -x "$(command which pipenv)" ]; then
         eval "$(pipenv --completion)"
     fi
 }
 
 function pipenv::dependences {
-    pipenv::load
-    echo -e "${CLEAR}${LIGHT_GREEN}Installing Dependences${CLEAR}"
+    message_info "Installing Dependences for ${PACKAGE_NAME}"
 }
 
 pipenv::load
 
-if [[ ! -x "$(command which pipenv)" ]]; then
+if [ ! -x "$(command which pipenv)" ]; then
     pipenv::install
 fi

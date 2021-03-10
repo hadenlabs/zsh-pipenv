@@ -6,15 +6,14 @@ test.help:
 	@echo '        test.lint                 Run all pre-commit'
 	@echo ''
 
-test: clean
+test:
 	@echo $(MESSAGE) Running tests on the current Python interpreter with coverage $(END)
-	@if [ -z "${run}" ]; then \
-		make test.help;\
-	fi
+	make test.help
 
-test.all: clean
-	@echo $(MESSAGE) Running tests on the current Python interpreter with coverage $(END)
-	$(docker-test-run) bash -c "zunit"
+test.all:
+	@echo $(MESSAGE) Running all tests $(END)
+	make test.lint
 
-test.lint: clean
+test.lint:
+	@echo $(MESSAGE) Running validator for pre-commit $(END)
 	$(PIPENV_RUN) pre-commit run --all-files --verbose

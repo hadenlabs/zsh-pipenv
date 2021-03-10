@@ -8,36 +8,14 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-PACKAGE_NAME=pipenv
-
-plugin_dir=$(dirname "${0}":A)
+# shellcheck disable=SC2034  # Unused variables left for readability
+ZSH_PIPENV_PATH=$(dirname "${0}")
 
 # shellcheck source=/dev/null
-source "${plugin_dir}"/src/helpers/messages.zsh
+source "${ZSH_PIPENV_PATH}"/config/main.zsh
 
-function pipenv::install {
-    message_info "Installing ${PACKAGE_NAME}"
-    if [ -x "$(command which pip3)" ]; then
-        pip3 install --user ${PACKAGE_NAME}
-    fi
-    message_success "Installed ${PACKAGE_NAME}"
-}
+# shellcheck source=/dev/null
+source "${ZSH_PIPENV_PATH}"/internal/main.zsh
 
-function pipenv::load {
-    if [ -x "$(command which pyenv)" ]; then
-        export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
-    fi
-    if [ -x "$(command which pipenv)" ]; then
-        eval "$(pipenv --completion)"
-    fi
-}
-
-function pipenv::dependences {
-    message_info "Installing Dependences for ${PACKAGE_NAME}"
-}
-
-pipenv::load
-
-if [ ! -x "$(command which pipenv)" ]; then
-    pipenv::install
-fi
+# shellcheck source=/dev/null
+source "${ZSH_PIPENV_PATH}"/pkg/main.zsh

@@ -52,7 +52,7 @@
     "prettier-tslint": "^0.4.2",
     "rimraf": "^3.0.2",
     "semantic-release": "^17.4.1",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "stylelint": "^13.11.0",
     "stylelint-config-standard": "^20.0.0",
     "ts-node": "^9.1.1",
